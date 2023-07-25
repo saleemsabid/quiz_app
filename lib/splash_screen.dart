@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen(this.startQuiz, {super.key});
   final void Function() startQuiz;
@@ -17,9 +19,9 @@ class SplashScreen extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          const Text(
+          Text(
             'Learn Flutter The Easy Way',
-            style: TextStyle(fontSize: 25, color: Colors.white),
+            style: GoogleFonts.bebasNeue(fontSize: 26, color: Colors.white),
           ),
           const SizedBox(
             height: 20,
