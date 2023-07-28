@@ -32,6 +32,12 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  void restartQuiz() {
+    setState(() {
+      activeScreen = 'questions-screen';
+    });
+  }
+
   @override
   Widget build(context) {
     Widget screenWidget = SplashScreen(switchScreen);
@@ -43,6 +49,7 @@ class _QuizState extends State<Quiz> {
     if (activeScreen == 'results-screen') {
       screenWidget = ResultsScreen(
         chosenAnswers: selectedAnswers,
+        onRestart: restartQuiz,
       );
     }
 
@@ -53,8 +60,8 @@ class _QuizState extends State<Quiz> {
           child: Container(
               decoration: const BoxDecoration(
                 gradient: LinearGradient(colors: [
-                  Color.fromARGB(255, 95, 48, 177),
-                  Color.fromARGB(255, 126, 40, 184),
+                  Color.fromARGB(255, 64, 22, 136),
+                  Color.fromARGB(255, 67, 13, 110),
                 ], begin: Alignment.topLeft, end: Alignment.bottomRight),
               ),
               child: screenWidget),
